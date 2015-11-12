@@ -1,0 +1,27 @@
+{
+  "name": "agg-mongo-dal",
+  "version": "1.0.0",
+  "description": "Data layer for Mongo DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buzzub/agg-mongo-dal.git"
+  },
+  "keywords": [
+    "mongo"
+  ],
+  "author": "Natalie Johnson, Peter Andrews, Rabia Mahmood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buzzub/agg-mongo-dal/issues"
+  },
+  "homepage": "https://github.com/buzzub/agg-mongo-dal#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "fh-mbaas-api": "^5.3.5",
+    "underscore": "^1.8.3"
+  }
+}
