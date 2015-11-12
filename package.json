@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buzzub/agg-mongo-dal.git"
+    "url": "git+https://github.com/AggregateIndustries/agg-mongo-dal.git"
   },
   "keywords": [
     "mongo"
@@ -16,9 +16,9 @@
   "author": "Natalie Johnson, Peter Andrews, Rabia Mahmood",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/buzzub/agg-mongo-dal/issues"
+    "url": "https://github.com/AggregateIndustries/agg-mongo-dal/issues"
   },
-  "homepage": "https://github.com/buzzub/agg-mongo-dal#readme",
+  "homepage": "https://github.com/AggregateIndustries/agg-mongo-dal#readme",
   "dependencies": {
     "async": "^1.5.0",
     "fh-mbaas-api": "^5.3.5",
