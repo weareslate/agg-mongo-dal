@@ -1,6 +1,6 @@
 {
   "name": "agg-mongo-dal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Data layer for Mongo DB",
   "main": "index.js",
   "scripts": {
