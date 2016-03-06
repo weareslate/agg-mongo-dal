@@ -35,8 +35,15 @@ function dbCb(cb) {
 
 exports.create = function (col, fields, cb) {
     // Note create time of items
-    fields._createDateTime = Date.now();
-    fields._createDateTimeHuman = new Date();
+    if (_.isArray(fields))  {
+        fields.forEach( function (field) {
+            field._createDateTime = Date.now();
+            field._createDateTimeHuman = new Date();
+        });
+    } else {
+        fields._createDateTime = Date.now();
+        fields._createDateTimeHuman = new Date();
+    }
 
     $fh.db({
         'act': 'create',
