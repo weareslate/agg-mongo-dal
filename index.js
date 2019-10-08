@@ -34,6 +34,8 @@ function dbCb(cb) {
 }
 
 exports.create = function (col, fields, cb) {
+    console.log('[agg-mongo-dal/index.js:37] In create');
+    console.log('col:',col,'fields:',fields);
     // Note create time of items
     if (_.isArray(fields))  {
         fields.forEach( function (field) {

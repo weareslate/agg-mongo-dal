@@ -21,7 +21,7 @@
   "homepage": "https://github.com/AggregateIndustries/agg-mongo-dal#readme",
   "dependencies": {
     "async": "^1.5.0",
-    "fh-mbaas-api": "^5.3.5",
+    "fh-mbaas-api": "https://github.com/weareslate/fh-mbaas-api#slate-migration",
     "underscore": "^1.8.3"
   }
 }
