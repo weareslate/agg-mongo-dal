@@ -1,6 +1,7 @@
 var _ = require('underscore'),
     // console = require('../console.js'),
-    $fh = require('fh-mbaas-api'),
+    // $fh = require('fh-mbaas-api'),
+    mongoClient = require('alt-fh-db').client,
     async = require('async');
     // ERRORS = require('../errorCodes').dbErrors;
 // DITCH_REQ_LIMIT = require('../constants').DITCH_REQ_LIMIT;
@@ -47,14 +48,14 @@ exports.create = function (col, fields, cb) {
         fields._createDateTimeHuman = new Date();
     }
 
-    $fh.db({
+    mongoClient.db({
         'act': 'create',
         'type': col,
         'fields': fields
     }, dbCb(cb));
 
     // var func = function (callback) {
-    //     $fh.db({
+    //     mongoClient.db({
     //         'act': 'create',
     //         'type': col,
     //         'fields': fields
@@ -65,7 +66,7 @@ exports.create = function (col, fields, cb) {
 };
 
 exports.read = function (col, guid, cb) {
-    $fh.db({
+    mongoClient.db({
         'act': 'read',
         'type': col,
         'guid': guid
@@ -76,7 +77,7 @@ exports.update = function (col, guid, fields, cb) {
     // Track when items are updated
     fields._lastModified = Date.now();
 
-    $fh.db({
+    mongoClient.db({
         'act': 'update',
         'type': col,
         'fields': fields,
@@ -98,7 +99,7 @@ exports.list = function (col, restrictions, cb) {
         params = _.extend(params, restrictions);
     }
 
-    $fh.db(params, dbCb(cb));
+    mongoClient.db(params, dbCb(cb));
 };
 
 exports.listWithFields = function (col, restrictions, fields, cb) {
@@ -110,11 +111,11 @@ exports.listWithFields = function (col, restrictions, fields, cb) {
     if (restrictions) {
         params = _.extend(params, restrictions);
     }
-    $fh.db(params, dbCb(cb));
+    mongoClient.db(params, dbCb(cb));
 };
 
 var remove = exports.remove = function (col, guid, cb) {
-    $fh.db({
+    mongoClient.db({
         'act': 'delete',
         'type': col,
         guid: guid
@@ -124,7 +125,7 @@ var remove = exports.remove = function (col, guid, cb) {
 
 var removeAll = exports.removeAll = function (col, cb) {
     console.log('Deleting collection: %s', col);
-    $fh.db({
+    mongoClient.db({
         'act': 'deleteall',
         'type': col
     }, dbCb(cb));
@@ -163,5 +164,5 @@ exports.removeByIds = function (col, ids, cb) {
 
 
 exports.genericQuery = function (query, cb) {
-    $fh.db(query, cb);
+    mongoClient.db(query, cb);
 };

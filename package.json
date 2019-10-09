@@ -22,6 +22,7 @@
   "dependencies": {
     "async": "^1.5.0",
     "fh-mbaas-api": "https://github.com/weareslate/fh-mbaas-api#slate-migration",
+    "fh-db": "https://github.com/rhappdev/alt-fh-db",
     "underscore": "^1.8.3"
   }
 }
